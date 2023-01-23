@@ -18,6 +18,8 @@
     ./hardware-configuration.nix
   ];
 
+  time.timeZone = "Europe/Amsterdam";
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -41,6 +43,10 @@
       allowUnfree = true;
     };
   };
+
+  fonts.fonts = with pgks; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
 
   nix = {
     # This will add each flake input as a registry
@@ -86,6 +92,7 @@
         "wheel" 
         "docker" 
       ];
+      shell = pkgs.zsh;
     };
   };
 
@@ -98,6 +105,13 @@
     # Use keys only. Remove if you want to SSH using password (not recommended)
     passwordAuthentication = false;
   };
+  
+  environment.systemPackages = with pkgs; [
+    tree
+    unzip
+    wget
+    stow
+  ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "22.11";
