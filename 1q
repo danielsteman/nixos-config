@@ -46,7 +46,6 @@
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    meslo-lgs-nf
   ];
 
   nix = {
@@ -110,26 +109,17 @@
   # Get i3 to work
   services.xserver = {
     enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      session = [
-        {
-          name = "home-manager";
-          start = ''
-            $(pkgs.runtimeShell) $HOME/.hm-xsession &
-            waitPID=$!
-          '';
-        }
-      ];
-    };
-    displayManager = {
-      defaultSession = "none+i3";
-    };
-    windowManager.i3.enable = true;
+    desktopManager.default = "xsession";
+    displayManager.session = [
+      {
+        manage = "desktop";
+        name = "xsession";
+        start = ''exec $HOME/.xsession'';
+      }
+    ];
   };
 
   environment.systemPackages = with pkgs; [
-    zsh
     tree
     unzip
     wget

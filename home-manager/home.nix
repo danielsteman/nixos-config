@@ -45,11 +45,19 @@
   home = {
     username = "daniel";
     homeDirectory = "/home/daniel";
+    sessionVariables = {
+      EDITOR="nvim";
+      BROWSER="firefox";
+      TERMINAL="kitty";
+    };
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
+
+  # Enable xsession
+  xsession.enable = true;
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
