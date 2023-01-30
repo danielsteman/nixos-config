@@ -110,11 +110,12 @@
       av = ". venv/bin/activate";
       dv = "deactivate";
       v = "cv; av";
+
       # pip
 
       pi="pip install -r requirements.txt&&pip install -r requirements-dev.txt";
-      # git
 
+      # git
       gca = "git add .&&git commit -m";
       gpl = "git pull";
       gph = "git push";
@@ -139,9 +140,17 @@
 
   programs.kitty = {
     enable = true;
+    
+    settings = {
+      background_opacity = "0.8";
+    };
   };
 
   programs.firefox = {
+    enable = true;
+  };
+
+  programs.i3status-rust = {
     enable = true;
   };
 
