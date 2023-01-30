@@ -126,7 +126,7 @@
       defaultSession = "none+i3";
     };
     windowManager.i3.enable = true;
-    dpi = 165;
+    dpi = 175;
     videoDrivers = [ "nvidia" ];
   };
 
