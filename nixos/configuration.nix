@@ -125,7 +125,10 @@
     displayManager = {
       defaultSession = "none+i3";
     };
-    windowManager.i3.enable = true;
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+    };
     dpi = 175;
     videoDrivers = [ "nvidia" ];
   };
