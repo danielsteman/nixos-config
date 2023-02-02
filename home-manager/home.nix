@@ -150,9 +150,7 @@
     enable = true;
   };
 
-  programs.i3status-rust = {
-    enable = true;
-  };
+  programs.i3status-rust.enable = true; 
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

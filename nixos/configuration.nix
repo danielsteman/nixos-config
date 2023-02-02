@@ -134,6 +134,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    rustc
+    cargo
     zsh
     tree
     unzip
