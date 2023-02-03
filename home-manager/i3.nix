@@ -13,6 +13,14 @@
         inner = 15;
         outer = 5;
       };
+
+      startup = [
+        {
+          command = "exec i3-msg workspace 1";
+          always = true;
+          notification = false;
+        }
+      ];
     };
   };
 }
