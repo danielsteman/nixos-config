@@ -134,6 +134,8 @@
 
   environment.systemPackages = with pkgs; [
     rustc
+    nodejs-18_x
+    yarn
     cargo
     zsh
     tree
