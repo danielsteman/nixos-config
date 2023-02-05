@@ -10,8 +10,8 @@
       modifier = "Mod4";
 
       gaps = {
-        inner = 10;
-        outer = 2;
+        inner = 15;
+        outer = 5;
       };
 
       startup = [
