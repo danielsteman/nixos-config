@@ -122,6 +122,9 @@
         }
       ];
     };
+    displayManager = {
+      defaultSession = "none+i3";
+    };
     dpi = 175;
     videoDrivers = [ "nvidia" ];
   };
