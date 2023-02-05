@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   xsession.scriptPath = ".hm-session";
@@ -6,13 +6,8 @@
     enable = true;
     package = pkgs.i3-gaps;
 
-    config = {
+    config = rec {
       modifier = "Mod4";
-
-      gaps = {
-        inner = 15;
-        outer = 5;
-      };
 
       startup = [
         {
