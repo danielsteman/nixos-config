@@ -108,6 +108,8 @@
     passwordAuthentication = false;
   };
 
+  services.udev.extraRules = "ACTION=='add', SUBSYSTEM=='usb' DRIVER=='usb', ATTR{power/wakeup}='enabled'";
+
   # Get i3 to work
   services.xserver = {
     enable = true;
