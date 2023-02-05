@@ -110,24 +110,6 @@
   # Get i3 to work
   services.xserver = {
     enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      session = [
-        {
-          name = "home-manager";
-          start = ''
-            $(pkgs.runtimeShell) $HOME/.hm-xsession &
-            waitPID=$!
-          '';
-        }
-      ];
-    };
-    displayManager = {
-      defaultSession = "none+i3";
-    };
-    windowManager.i3 = {
-      enable = true;
-    };
     dpi = 175;
     videoDrivers = [ "nvidia" ];
   };
