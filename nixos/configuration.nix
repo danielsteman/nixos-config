@@ -75,6 +75,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader.grub.configurationLimit = 20;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -133,6 +134,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    efibootmgr
     rustc
     nodejs-18_x
     yarn
