@@ -138,6 +138,8 @@
 
   environment.systemPackages = with pkgs; [
     efibootmgr
+    gcc
+    python3
     rustc
     nodejs-18_x
     yarn
