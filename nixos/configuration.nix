@@ -16,6 +16,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./python.nix
   ];
 
   time.timeZone = "Europe/Amsterdam";
@@ -139,7 +140,6 @@
   environment.systemPackages = with pkgs; [
     efibootmgr
     gcc
-    python3
     rustc
     nodejs-18_x
     yarn
