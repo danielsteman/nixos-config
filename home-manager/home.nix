@@ -6,6 +6,7 @@
   imports = [
     ./i3.nix
     ./picom.nix
+    ./spotify.nix
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
