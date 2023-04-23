@@ -76,7 +76,7 @@
   # Bootloader settings
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi/EFI/BOOT/BOOTX64.EFI";
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.loader.grub.configurationLimit = 10;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
@@ -95,7 +95,7 @@
       extraGroups = [
         "wheel" 
         "docker" 
-        "jackaudio"
+        "audio"
       ];
       shell = pkgs.zsh;
     };
@@ -139,8 +139,6 @@
     videoDrivers = [ "nvidia" ];
   };
 
-  sound.enable = true;
-
   environment.systemPackages = with pkgs; [
     efibootmgr
     gcc
@@ -153,6 +151,7 @@
     unzip
     wget
     stow
+    pulseaudioFull
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
