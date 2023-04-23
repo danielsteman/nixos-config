@@ -76,8 +76,8 @@
   # Bootloader settings
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.loader.grub.configurationLimit = 20;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi/EFI/BOOT/BOOTX64.EFI";
+  boot.loader.grub.configurationLimit = 10;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -138,6 +138,8 @@
     dpi = 175;
     videoDrivers = [ "nvidia" ];
   };
+
+  sound.enable = true;
 
   environment.systemPackages = with pkgs; [
     efibootmgr
