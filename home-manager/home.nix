@@ -131,6 +131,9 @@
       gmp = "git merge production";
       gmd = "git merge development";
       grmc = "gcp&&gpl&&gc -&&gmp&&gph";
+
+      # vim
+      vim = "nvim";
     };
   };
 
