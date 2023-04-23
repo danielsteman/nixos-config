@@ -1,5 +1,5 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
-  imports = [ &lt;musnix&gt; ];
+  imports = [ musnix ];
   environment.systemPackages = with pkgs; [ libjack2 jack2 qjackctl ];
   environment.systemPackages = with pkgs; [ pavucontrol libjack2 jack2 qjackctl jack2Full jack_capture ];
   security.sudo.extraConfig = ''
