@@ -95,6 +95,7 @@
       extraGroups = [
         "wheel" 
         "docker" 
+        "jackaudio"
       ];
       shell = pkgs.zsh;
     };
