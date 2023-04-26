@@ -17,7 +17,6 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./python.nix
-    ./audio.nix
   ];
 
   time.timeZone = "Europe/Amsterdam";
@@ -96,6 +95,7 @@
         "wheel" 
         "docker" 
         "audio"
+        "jackaudio"
       ];
       shell = pkgs.zsh;
     };
@@ -152,8 +152,39 @@
     wget
     stow
     pulseaudioFull
+    lsof
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "22.11";
+
+  sound.enable = true;
+
+  nixpkgs.config.pulseaudio = true;
+
+  services.jack = {
+    jackd.enable = true;
+    # support ALSA only programs via ALSA JACK PCM plugin
+    alsa.enable = false;
+    # support ALSA only programs via loopback device (supports programs like Steam)
+    loopback = {
+      enable = true;
+      # buffering parameters for dmix device to work with ALSA only semi-professional sound programs
+      #dmixConfig = ''
+      #  period_size 2048
+      #'';
+    };
+  };
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+  };
+  hardware.pulseaudio.enable = false;
+
 }
