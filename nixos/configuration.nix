@@ -78,6 +78,9 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.loader.grub.configurationLimit = 10;
 
+  # Get latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
