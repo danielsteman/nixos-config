@@ -153,6 +153,7 @@
     stow
     pulseaudioFull
     lsof
+    usbutils
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
@@ -185,6 +186,7 @@
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
   };
-  hardware.pulseaudio.enable = false;
 
+  # Blueman is used to pair bluetooth devices
+  services.blueman.enable = true;
 }

@@ -4,7 +4,10 @@
   services.spotifyd = {
     enable = true;
     settings = {
-      username = "116885657";
+      global = {
+        username = "116885657";
+        password = (builtins.readFile ~/.password); 
+      };
       backend = "pulseaudio";
       device = "pipewire";
       deviceName = "spotifyd";
