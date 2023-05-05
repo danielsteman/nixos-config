@@ -146,6 +146,12 @@
     enable = true;
   };
 
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    terminal = "screen-256color";
+  };
+
   programs.kitty = {
     enable = true;
     settings = {
