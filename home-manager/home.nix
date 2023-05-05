@@ -108,6 +108,7 @@
       l = "ls -CF";
       lt = "ls --human-readable --size -1 -S --classify";
       c = "clear";
+      hist = "history 0";
 
       # virtual env
       cv = "virtualenv venv";
