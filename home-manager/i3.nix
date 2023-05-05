@@ -9,6 +9,8 @@
     config = {
       modifier = "Mod4";
 
+      window.border = 0; 
+
       gaps = {
         inner = 10;
         outer = 5;
