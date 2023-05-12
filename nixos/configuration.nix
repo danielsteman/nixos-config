@@ -192,4 +192,7 @@
 
   # Blueman is used to pair bluetooth devices
   services.blueman.enable = true;
+
+  # Docker
+  virtualisation.docker.enable = true;
 }
