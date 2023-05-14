@@ -7,6 +7,7 @@
     ./i3.nix
     ./picom.nix
     ./spotify.nix
+    ./vscode.nix
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
