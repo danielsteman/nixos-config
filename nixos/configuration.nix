@@ -147,6 +147,7 @@
     gcc
     rustc
     nodejs-18_x
+    nodePackages.typescript
     yarn
     cargo
     zsh
