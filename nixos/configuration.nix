@@ -159,6 +159,7 @@
     pulseaudioFull
     lsof
     usbutils
+    terraform
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
