@@ -148,6 +148,7 @@
     rustc
     nodejs-18_x
     nodePackages.typescript
+    nodePackages.gitmoji-cli
     yarn
     cargo
     zsh

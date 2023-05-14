@@ -59,6 +59,7 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     spotify-tui
+    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
   ];
 
   # Enable xsession
