@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, callPackage, ... }:
 
 {
   xsession.scriptPath = ".hm-session";
@@ -21,6 +21,12 @@
           command = "exec i3-msg workspace 1";
           always = true;
           notification = false;
+        }
+      ];
+      bars = [
+        {
+          position = "bottom";
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${./i3status-rust.toml}";
         }
       ];
     };

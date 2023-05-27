@@ -155,6 +155,10 @@
     enable = true;
     clock24 = true;
     terminal = "screen-256color";
+    extraConfig = ''
+      set -g status-bg black
+      set -g status-fg white
+    '';
   };
 
   programs.kitty = {
