@@ -13,7 +13,7 @@
 
       gaps = {
         inner = 10;
-        outer = 5;
+        outer = -10;
       };
 
       startup = [

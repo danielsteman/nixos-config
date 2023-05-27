@@ -136,6 +136,9 @@
 
       # vim
       vim = "nvim";
+
+      # terraform
+      tf = "terraform";
     };
   };
 
