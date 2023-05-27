@@ -25,8 +25,13 @@
       ];
       bars = [
         {
-          position = "bottom";
+          position = "top";
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${./i3status-rust.toml}";
+          fonts = {
+            names = [ "DejaVu Sans Mono" "FontAwesome5Free" ];
+            style = "Bold Semi-Condensed";
+            size = 10.0;
+          };
         }
       ];
     };
