@@ -15,13 +15,14 @@
         inner = 10;
         outer = -10;
       };
-
       startup = [
         {
           command = "exec i3-msg workspace 1";
           always = true;
           notification = false;
         }
+        { command = "kitty"; workspace = "1 🐱"; }
+        { command = "firefox"; workspace = "2 🕸️"; }
       ];
       bars = [
         {
