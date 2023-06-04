@@ -58,8 +58,12 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-    spotify-tui
+    jq
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+    kind
+    kubectl
+    kubectx
+    spotify-tui
   ];
 
   # Enable xsession
@@ -139,6 +143,17 @@
 
       # terraform
       tf = "terraform";
+
+      # kubectl
+      k = "kubectl";
+      kd = "kubectl describe pods";
+      kgp = "kubectl get pods";
+      kgs = "kubectl get svc";
+      kgap = "k get pods --all-namespaces";
+      ksc = "k config set-context --current --namespace=";
+      kverbs = "kubectl api-resources --verbs=list";
+      krd = "kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh";
+      busyshell = "k exec -it busybox -- /bin/sh";
     };
   };
 
