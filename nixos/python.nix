@@ -2,8 +2,11 @@
 
 let
   my-python-packages = p: with p; [
+    "dvc[all]"
     pandas
+    "pre-commit"
     pyarrow
+    pytest
     requests
     scikit-learn
     virtualenv
