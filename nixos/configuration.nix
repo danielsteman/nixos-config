@@ -79,7 +79,8 @@
   boot.loader.grub.configurationLimit = 10;
 
   # Get latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -95,8 +96,8 @@
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [
-        "wheel" 
-        "docker" 
+        "wheel"
+        "docker"
         "audio"
         "jackaudio"
       ];
@@ -145,6 +146,7 @@
   environment.systemPackages = with pkgs; [
     efibootmgr
     gcc
+    stdenv.cc.cc.lib
     rustc
     nodejs-18_x
     nodePackages.typescript
