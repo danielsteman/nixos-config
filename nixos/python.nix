@@ -1,10 +1,12 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 
 let
   my-python-packages = p: with p; [
-    virtualenv
     pandas
+    pyarrow
     requests
+    scikit-learn
+    virtualenv
     # other python packages
   ];
 in {
